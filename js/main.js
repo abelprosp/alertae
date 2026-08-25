@@ -44,7 +44,7 @@
   });
 
   /* Destaque do item de menu conforme a seção visível */
-  const sections = ["inicio", "como-funciona", "areas", "pesquisa", "parcerias", "contato"]
+  const sections = ["inicio", "como-funciona", "areas", "projetos", "pesquisa", "parcerias", "contato"]
     .map((id) => document.getElementById(id))
     .filter(Boolean);
 

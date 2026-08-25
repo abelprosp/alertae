@@ -383,32 +383,88 @@
         </div>
       </section>
 
-      <!-- Indicadores institucionais: placeholders, sem números inventados -->
-      <section class="metrics" aria-labelledby="metricas-titulo">
+      <!-- ========== PROJETOS ========== -->
+      <section class="section" id="projetos" aria-labelledby="projetos-titulo">
         <div class="container">
-          <h2 id="metricas-titulo" class="visually-hidden">Indicadores institucionais</h2>
-          <ul class="metrics__list">
+          <header class="section__header">
+            <p class="eyebrow">Pesquisa em desenvolvimento</p>
+            <h2 id="projetos-titulo">Dois eixos de pesquisa aplicada</h2>
+            <p class="section__intro">
+              A Alertaê investiga soluções concretas para comunicação de alertas e
+              antecipação de cheias. Os projetos abaixo descrevem objetivos e
+              limites com transparência — sem resultados, prazos ou abrangência
+              ainda não divulgados.
+            </p>
+          </header>
+
+          <ul class="project-grid">
             <li>
-              <p class="metrics__value">[indicador a definir]</p>
-              <p class="metrics__label">Cidades e territórios em estudo</p>
+              <article class="project-card" aria-labelledby="projeto-gateways">
+              <span class="info-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 40 40" width="32" height="32">
+                  <rect x="5" y="16" width="20" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2" />
+                  <circle cx="11" cy="23" r="1.6" fill="currentColor" />
+                  <path d="M16 23h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                  <path d="M28 14c3.2 3 3.2 9 0 12M32.5 10.5c5.2 5 5.2 14 0 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
+              </span>
+              <p class="project-card__tag">Comunicação de alertas</p>
+              <h3 id="projeto-gateways">Gateways de alerta com TV boxes e modem 5G</h3>
+              <p>
+                A Alertaê pesquisa o reaproveitamento de TV boxes antigas,
+                combinadas com modem 5G, para servirem de gateways de alerta caso
+                a internet convencional falhe. O objetivo é manter um canal de
+                comunicação mesmo quando a conexão habitual da cidade ou da
+                comunidade cair — por pane, saturação da rede ou interrupção local.
+              </p>
+              <p>
+                Trata-se de pesquisa e desenvolvimento de um canal redundante de
+                disseminação de alertas, pensado para se integrar aos protocolos
+                oficiais usados por prefeituras e defesa civil. A proposta é
+                acessível: equipamentos já existentes podem ganhar uma função de
+                apoio, em vez de serem descartados.
+              </p>
+              <p class="project-card__note">
+                O trabalho não promete cobertura universal, não substitui a defesa
+                civil e não garante que o alerta chegue a todos os pontos do
+                território. Em emergência, a referência continua sendo os canais
+                oficiais das autoridades competentes.
+              </p>
+              </article>
             </li>
             <li>
-              <p class="metrics__value">[indicador a definir]</p>
-              <p class="metrics__label">Fontes de dados em integração</p>
-            </li>
-            <li>
-              <p class="metrics__value">[indicador a definir]</p>
-              <p class="metrics__label">Linhas de pesquisa ativas</p>
-            </li>
-            <li>
-              <p class="metrics__value">[indicador a definir]</p>
-              <p class="metrics__label">Instituições em diálogo</p>
+              <article class="project-card" aria-labelledby="projeto-cheias">
+              <span class="info-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 40 40" width="32" height="32">
+                  <path d="M8 24c3.5-7 7-3.5 11-9s5.5 2 9-5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                  <path d="M8 32h24" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                  <path d="M13 32v-7M20 32v-12M27 32v-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
+              </span>
+              <p class="project-card__tag">Antecipação de cheias</p>
+              <h3 id="projeto-cheias">Aprendizado de máquina para previsão de cheias</h3>
+              <p>
+                A Alertaê pesquisa e desenvolve modelos de aprendizado de máquina
+                para antecipar cheias e alagamentos. O trabalho se apoia em dados
+                hidrológicos e meteorológicos — como chuva, níveis d’água e outras
+                observações ambientais disponíveis — para oferecer uma leitura
+                adicional do risco, com a antecedência possível.
+              </p>
+              <p>
+                O propósito é apoiar a decisão de cidades e da defesa civil,
+                integrado aos protocolos oficiais. Os modelos lidam com incerteza
+                científica: não há precisão absoluta, e os resultados devem ser
+                lidos junto à hidrologia tradicional, à observação de campo e às
+                orientações das autoridades.
+              </p>
+              <p class="project-card__note">
+                A pesquisa não substitui órgãos de meteorologia nem emite ordens
+                de evacuação. Seu papel é contribuir para que gestores tenham mais
+                elementos para agir com responsabilidade.
+              </p>
+              </article>
             </li>
           </ul>
-          <p class="metrics__note">
-            Números institucionais ainda não publicados. Os campos acima são
-            placeholders até a Alertaê disponibilizar dados oficiais.
-          </p>
         </div>
       </section>
 
@@ -573,9 +629,12 @@
             <p class="eyebrow">Pesquisa e inovação</p>
             <h2 id="pesquisa-titulo">Ciência aberta à colaboração</h2>
             <p class="section__intro">
-              A Alertaê organiza seu trabalho em linhas de pesquisa, projetos-piloto,
-              publicações e parcerias acadêmicas. Títulos e resultados específicos
-              serão publicados quando houver divulgação oficial.
+              A Alertaê organiza seu trabalho em linhas de pesquisa, publicações e
+              parcerias acadêmicas. Dois eixos concretos em desenvolvimento —
+              <a href="#projeto-gateways">gateways de alerta com conectividade redundante</a>
+              e
+              <a href="#projeto-cheias">modelos de aprendizado de máquina para cheias</a>
+              — estão descritos na seção Projetos.
             </p>
           </header>
 
@@ -583,17 +642,20 @@
             <li class="info-card">
               <h3>Linhas de pesquisa</h3>
               <p>
-                Modelagem de riscos, fusão de dados ambientais, comunicação de alertas
+                Comunicação de alertas com canais redundantes, modelagem hidrológica
+                e meteorológica com aprendizado de máquina, fusão de dados ambientais
                 e análise de vulnerabilidade urbana.
-                <span class="placeholder">[lista oficial a publicar]</span>
               </p>
             </li>
             <li class="info-card">
-              <h3>Projetos-piloto</h3>
+              <h3>Projetos em desenvolvimento</h3>
               <p>
-                Experimentos em territórios reais, com prefeituras e comunidades,
-                para testar métodos em condições concretas.
-                <span class="placeholder">[projetos a divulgar]</span>
+                Dois projetos-base orientam o trabalho atual:
+                <a href="#projeto-gateways">gateways de alerta com TV boxes e modem 5G</a>
+                e
+                <a href="#projeto-cheias">previsão de cheias com aprendizado de máquina</a>.
+                Resultados, territórios e prazos serão publicados quando houver
+                divulgação oficial.
               </p>
             </li>
             <li class="info-card">
@@ -614,7 +676,7 @@
           </ul>
 
           <div class="hero__actions section__actions">
-            <a class="btn btn--primary" href="#contato">
+            <a class="btn btn--primary" href="#projetos">
               Conheça nossas pesquisas
               <span class="btn__icon" aria-hidden="true">
                 <img src="assets/icone-branco.png" alt="" width="16" height="16" />
@@ -639,8 +701,12 @@
 
           <ul class="collab-list">
             <li>
-              <h3>Projetos-piloto</h3>
-              <p>Testar métodos de monitoramento e alerta em um recorte urbano definido, com avaliação conjunta.</p>
+              <h3>Projetos de pesquisa conjunta</h3>
+              <p>
+                Colaborar nos eixos em desenvolvimento — comunicação de alertas com
+                canais redundantes e antecipação de cheias — em um recorte urbano
+                definido, com avaliação conjunta.
+              </p>
             </li>
             <li>
               <h3>Compartilhamento responsável de dados</h3>
@@ -715,10 +781,34 @@
               </p>
             </details>
             <details class="faq__item">
-              <summary>Como uma prefeitura pode participar de um projeto-piloto?</summary>
+              <summary>Como os alertas chegam se a internet falhar?</summary>
+              <p>
+                A Alertaê pesquisa um canal redundante de disseminação: o
+                reaproveitamento de TV boxes antigas combinadas com modem 5G, para
+                servirem de gateways de alerta caso a conexão convencional caia.
+                Isso é pesquisa e desenvolvimento, integrado aos protocolos oficiais
+                — não é cobertura universal nem substituto da defesa civil. Em
+                emergência, a população deve seguir os canais oficiais das
+                autoridades competentes.
+              </p>
+            </details>
+            <details class="faq__item">
+              <summary>O aprendizado de máquina substitui a hidrologia tradicional?</summary>
+              <p>
+                Não. Os modelos de aprendizado de máquina para cheias e alagamentos
+                são um eixo de pesquisa complementar. Eles usam dados hidrológicos e
+                meteorológicos para apoiar a decisão, com incerteza científica
+                explícita. Não há precisão absoluta: os resultados devem ser lidos
+                junto à hidrologia tradicional, à observação de campo e aos
+                protocolos oficiais de cidades e defesa civil.
+              </p>
+            </details>
+            <details class="faq__item">
+              <summary>Como uma prefeitura pode participar da pesquisa?</summary>
               <p>
                 A gestão municipal pode apresentar o território, os desafios e a
-                disponibilidade de dados ou equipes. O diálogo começa pelo
+                disponibilidade de dados ou equipes — inclusive interesse nos eixos
+                de gateways de alerta e de previsão de cheias. O diálogo começa pelo
                 formulário de contato. Critérios, prazos e contrapartidas serão
                 definidos caso a caso.
                 <span class="placeholder"> [edital ou fluxo oficial a definir]</span>
@@ -865,6 +955,7 @@
             <li><a href="#inicio">Início</a></li>
             <li><a href="#como-funciona">Como funciona</a></li>
             <li><a href="#areas">Áreas de atuação</a></li>
+            <li><a href="#projetos">Projetos</a></li>
             <li><a href="#pesquisa">Pesquisa</a></li>
             <li><a href="#parcerias">Parcerias</a></li>
             <li><a href="#contato">Contato</a></li>

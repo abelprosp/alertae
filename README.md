@@ -42,5 +42,4 @@ Quando houver fotos oficiais, substituir os JPEGs em `assets/images/` e remover 
 
 ## Placeholders a preencher
 
-E-mail, telefone, endereço, redes, domínio, indicadores, editais, publicações e CNPJ/DPO.
-# alertae
+E-mail, telefone, endereço, redes, domínio, editais, publicações e CNPJ/DPO.

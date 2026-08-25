@@ -497,6 +497,12 @@ textarea {
   color: var(--color-text-muted);
 }
 
+.section__intro a,
+.info-card a {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
 .section__actions {
   margin-top: 2rem;
 }
@@ -542,7 +548,8 @@ textarea {
 .info-card,
 .feature-grid li,
 .process__step,
-.collab-list li {
+.collab-list li,
+.project-card {
   background: #fff;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-card);
@@ -561,43 +568,49 @@ textarea {
   color: var(--color-orange);
 }
 
-.metrics {
-  padding: 1.5rem 0 3rem;
-  background: var(--color-bg-soft);
-}
-
-.metrics__list {
+.project-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.1rem;
 }
 
-.metrics__list li {
-  text-align: center;
-  padding: 0.5rem 1rem;
+.project-grid > li {
+  display: flex;
 }
 
-.metrics__list li + li {
-  border-left: 1px solid var(--color-border);
+.project-card {
+  padding: 1.75rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
 }
 
-.metrics__value {
-  font-size: 1.05rem;
-  font-weight: 800;
+.project-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.9rem;
+}
+
+.project-card p {
+  color: var(--color-text-muted);
+}
+
+.project-card .project-card__tag {
+  margin: 0 0 0.55rem;
   color: var(--color-orange);
-  margin-bottom: 0.35rem;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
-.metrics__label {
-  color: var(--color-text-muted);
-  font-size: 0.95rem;
-}
-
-.metrics__note {
-  margin-top: 1.25rem;
-  text-align: center;
-  font-size: 0.85rem;
-  color: var(--color-text-muted);
+.project-card .project-card__note {
+  margin-top: auto;
+  padding: 0.95rem 1rem;
+  background: var(--color-orange-soft);
+  border-radius: 12px;
+  font-size: 0.92rem;
+  color: var(--color-text);
 }
 
 .process {
@@ -960,14 +973,10 @@ textarea {
   .split,
   .split--form,
   .process,
-  .metrics__list,
+  .project-grid,
   .card-grid--4,
   .collab-list {
     grid-template-columns: 1fr 1fr;
-  }
-
-  .metrics__list li + li {
-    border-left: 0;
   }
 }
 
@@ -983,7 +992,7 @@ textarea {
   .split,
   .split--form,
   .process,
-  .metrics__list,
+  .project-grid,
   .card-grid--4,
   .collab-list,
   .form__row,
