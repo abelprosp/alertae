@@ -606,6 +606,247 @@ textarea {
   color: var(--color-text);
 }
 
+.project-card__repo {
+  margin: 0.15rem 0 1rem;
+}
+
+.project-card__repo a {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  max-width: 100%;
+  padding: 0.75rem 0.95rem;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  text-decoration: none;
+  color: var(--color-text);
+  background: #fff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card__repo a:hover {
+  border-color: var(--color-orange);
+  color: var(--color-text);
+  box-shadow: 0 6px 16px rgba(251, 60, 3, 0.08);
+}
+
+.project-card__repo svg {
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+  color: var(--color-orange);
+}
+
+.project-card__repo-name {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-orange);
+}
+
+/* --------------------------------------------------------------------------
+   Demonstrativo da arquitetura (gateways)
+   -------------------------------------------------------------------------- */
+#arch-lista {
+  list-style: decimal;
+}
+
+.arch {
+  margin: 1.35rem 0 0;
+  padding: 1.6rem 1.25rem 1.45rem;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+}
+
+.arch__header {
+  max-width: 38rem;
+  margin-bottom: 1.35rem;
+}
+
+.arch__header h3 {
+  font-size: clamp(1.2rem, 2.4vw, 1.4rem);
+  margin-bottom: 0.5rem;
+}
+
+.arch__header p {
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
+.arch__flow {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.arch__stage {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1.05rem 1.15rem;
+  border-radius: 16px;
+  border: 1px solid var(--color-border);
+  background: #fff;
+}
+
+.arch__icon {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 0.6rem;
+  border-radius: 12px;
+  background: var(--color-orange-soft);
+  color: var(--color-orange);
+}
+
+.arch__kicker {
+  margin-bottom: 0.15rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-orange);
+}
+
+.arch__name {
+  font-size: 1.05rem;
+  letter-spacing: -0.02em;
+  color: inherit;
+}
+
+.arch__meta {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.arch__stage--cloud {
+  background: var(--color-bg-dark);
+  border-color: var(--color-bg-dark);
+  color: var(--color-text-on-dark);
+}
+
+.arch__stage--cloud .arch__icon {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.arch__stage--cloud .arch__kicker,
+.arch__stage--cloud .arch__meta {
+  color: rgba(245, 247, 249, 0.72);
+}
+
+.arch__stage--node {
+  border-color: var(--color-orange);
+}
+
+.arch__stage--modem {
+  background: var(--color-orange-soft);
+  border-color: #f3cfc4;
+}
+
+.arch__stage--people {
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  background: var(--color-orange);
+  border-color: var(--color-orange);
+  color: #fff;
+}
+
+.arch__stage--people .arch__icon {
+  margin-bottom: 0;
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+}
+
+.arch__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.85rem;
+}
+
+.arch__chips li {
+  padding: 0.28rem 0.65rem;
+  border-radius: var(--radius-pill);
+  background: var(--color-orange-soft);
+  color: var(--color-text);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.arch__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+  padding: 0.1rem 0;
+}
+
+.arch__link-line {
+  width: 2px;
+  height: 0.8rem;
+  background: var(--color-orange);
+  border-radius: 2px;
+}
+
+.arch__link-label {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-orange);
+  white-space: nowrap;
+}
+
+@media (min-width: 1080px) {
+  .arch {
+    padding: 1.85rem 1.6rem 1.7rem;
+  }
+
+  .arch__flow {
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    gap: 0.15rem;
+  }
+
+  .arch__stage {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .arch__stage--node {
+    flex: 1.4 1 0;
+  }
+
+  .arch__stage--people {
+    flex: 0.75 1 0;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .arch__stage--people .arch__icon {
+    margin-bottom: 0.5rem;
+  }
+
+  .arch__link {
+    flex-direction: row;
+    flex: 0 0 auto;
+    align-self: center;
+    padding: 0 0.1rem;
+  }
+
+  .arch__link-line {
+    width: 0.65rem;
+    height: 2px;
+  }
+}
+
 .process {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -999,6 +1240,10 @@ textarea {
 @media (max-width: 520px) {
   .hero__actions .btn,
   .section__actions .btn {
+    width: 100%;
+  }
+
+  .project-card__repo a {
     width: 100%;
   }
 

@@ -408,20 +408,39 @@
                 </svg>
               </span>
               <p class="project-card__tag">Comunicação de alertas</p>
-              <h3 id="projeto-gateways">Gateways de alerta com TV boxes e modem 5G</h3>
+              <h3 id="projeto-gateways">Gateways de alerta com TV boxes e modem 4G</h3>
               <p>
-                A Alertaê pesquisa o reaproveitamento de TV boxes antigas,
-                combinadas com modem 5G, para servirem de gateways de alerta caso
-                a internet convencional falhe. O objetivo é manter um canal de
-                comunicação mesmo quando a conexão habitual da cidade ou da
-                comunidade cair — por pane, saturação da rede ou interrupção local.
+                A Alertaê pesquisa o reaproveitamento de TV boxes antigas como
+                nós locais de alerta. A nuvem (Alertaê Cloud, em VPS) comunica-se
+                pela internet com o node na TV box. Nesse equipamento rodam Docker,
+                MQTT, API local, banco SQLite e uma fila de SMS. O node liga-se
+                por USB a um modem 4G com SIM — SMS e dados móveis — para levar
+                o alerta até as pessoas.
               </p>
               <p>
-                Trata-se de pesquisa e desenvolvimento de um canal redundante de
-                disseminação de alertas, pensado para se integrar aos protocolos
-                oficiais usados por prefeituras e defesa civil. A proposta é
-                acessível: equipamentos já existentes podem ganhar uma função de
-                apoio, em vez de serem descartados.
+                O objetivo é um canal redundante: quando a internet convencional
+                falha — por pane, saturação da rede ou interrupção local — o node
+                local e o SMS pelo modem continuam o caminho. A proposta se
+                integra aos protocolos oficiais de prefeituras e defesa civil e
+                dá nova função a equipamentos já existentes, em vez de descartá-los.
+              </p>
+              <p class="project-card__repo">
+                <a
+                  href="https://github.com/abelprosp/alert-protocol-sms"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+                    <path
+                      fill="currentColor"
+                      d="M12 2C6.48 2 2 6.58 2 12.26c0 4.52 2.87 8.35 6.84 9.71.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.36 1.12 2.94.85.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.27 2.75 1.05A9.3 9.3 0 0 1 12 6.84c.85 0 1.71.12 2.51.35 1.9-1.32 2.74-1.05 2.74-1.05.55 1.4.2 2.44.1 2.7.65.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.58 5.06.36.32.68.94.68 1.9 0 1.38-.01 2.48-.01 2.82 0 .27.18.6.69.49A10.03 10.03 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z"
+                    />
+                  </svg>
+                  <span>
+                    Repositório do protocolo de alertas
+                    <span class="project-card__repo-name">alert-protocol-sms</span>
+                  </span>
+                </a>
               </p>
               <p class="project-card__note">
                 O trabalho não promete cobertura universal, não substitui a defesa
@@ -464,6 +483,98 @@
               </article>
             </li>
           </ul>
+
+          <figure class="arch" aria-labelledby="arch-titulo" aria-describedby="arch-texto arch-lista">
+            <figcaption class="arch__header">
+              <p class="eyebrow">Demonstrativo</p>
+              <h3 id="arch-titulo">Arquitetura do gateway de alerta</h3>
+              <p>
+                Fluxo do canal redundante: da nuvem ao SMS pelo modem 4G, com o
+                node local na TV box no meio do caminho.
+              </p>
+            </figcaption>
+
+            <p class="visually-hidden" id="arch-texto">
+              Canal redundante: quando a internet falha, o node local e o SMS
+              pelo modem continuam o caminho. A arquitetura segue esta sequência:
+            </p>
+            <ol class="visually-hidden" id="arch-lista">
+              <li>Alertaê Cloud em VPS</li>
+              <li>Internet</li>
+              <li>Alertaê Node na TV box: Docker, MQTT, API local, banco SQLite e fila SMS</li>
+              <li>USB</li>
+              <li>Modem 4G com SIM: SMS e dados móveis</li>
+              <li>Pessoas</li>
+            </ol>
+
+            <ol class="arch__flow" aria-hidden="true">
+              <li class="arch__stage arch__stage--cloud">
+                <span class="arch__icon" aria-hidden="true">
+                  <svg viewBox="0 0 32 32" width="28" height="28">
+                    <rect x="6" y="12" width="20" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="2" />
+                    <path d="M10 12V9h12v3M12 16h8M12 20h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                  </svg>
+                </span>
+                <span class="arch__kicker">Nuvem</span>
+                <strong class="arch__name">Alertaê Cloud</strong>
+                <span class="arch__meta">VPS</span>
+              </li>
+              <li class="arch__link">
+                <span class="arch__link-line"></span>
+                <span class="arch__link-label">Internet</span>
+                <span class="arch__link-line"></span>
+              </li>
+              <li class="arch__stage arch__stage--node">
+                <span class="arch__icon" aria-hidden="true">
+                  <svg viewBox="0 0 32 32" width="28" height="28">
+                    <rect x="4" y="8" width="24" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2" />
+                    <path d="M8 24h16M10 12h12v8H10z" fill="none" stroke="currentColor" stroke-width="2" />
+                  </svg>
+                </span>
+                <span class="arch__kicker">Node local</span>
+                <strong class="arch__name">Alertaê Node</strong>
+                <span class="arch__meta">TV box</span>
+                <ul class="arch__chips">
+                  <li>Docker</li>
+                  <li>MQTT</li>
+                  <li>API local</li>
+                  <li>Banco SQLite</li>
+                  <li>Fila SMS</li>
+                </ul>
+              </li>
+              <li class="arch__link">
+                <span class="arch__link-line"></span>
+                <span class="arch__link-label">USB</span>
+                <span class="arch__link-line"></span>
+              </li>
+              <li class="arch__stage arch__stage--modem">
+                <span class="arch__icon" aria-hidden="true">
+                  <svg viewBox="0 0 32 32" width="28" height="28">
+                    <rect x="7" y="10" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2" />
+                    <circle cx="12" cy="17" r="1.5" fill="currentColor" />
+                    <path d="M17 14c2.2 2 2.2 6 0 8M21 12c4 4 4 10 0 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                  </svg>
+                </span>
+                <span class="arch__kicker">Canal móvel</span>
+                <strong class="arch__name">Modem 4G com SIM</strong>
+                <span class="arch__meta">SMS e dados móveis</span>
+              </li>
+              <li class="arch__link">
+                <span class="arch__link-line"></span>
+                <span class="arch__link-label">Alertas</span>
+                <span class="arch__link-line"></span>
+              </li>
+              <li class="arch__stage arch__stage--people">
+                <span class="arch__icon" aria-hidden="true">
+                  <svg viewBox="0 0 32 32" width="28" height="28">
+                    <circle cx="16" cy="11" r="4" fill="none" stroke="currentColor" stroke-width="2" />
+                    <path d="M7 26c1.5-5 4.5-7 9-7s7.5 2 9 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                  </svg>
+                </span>
+                <strong class="arch__name">Pessoas</strong>
+              </li>
+            </ol>
+          </figure>
         </div>
       </section>
 
@@ -650,7 +761,7 @@
               <h3>Projetos em desenvolvimento</h3>
               <p>
                 Dois projetos-base orientam o trabalho atual:
-                <a href="#projeto-gateways">gateways de alerta com TV boxes e modem 5G</a>
+                <a href="#projeto-gateways">gateways de alerta com TV boxes e modem 4G</a>
                 e
                 <a href="#projeto-cheias">previsão de cheias com aprendizado de máquina</a>.
                 Resultados, territórios e prazos serão publicados quando houver
@@ -780,13 +891,14 @@
             <details class="faq__item">
               <summary>Como os alertas chegam se a internet falhar?</summary>
               <p>
-                A Alertaê pesquisa um canal redundante de disseminação: o
-                reaproveitamento de TV boxes antigas combinadas com modem 5G, para
-                servirem de gateways de alerta caso a conexão convencional caia.
-                Isso é pesquisa e desenvolvimento, integrado aos protocolos oficiais
-                — não é cobertura universal nem substituto da defesa civil. Em
-                emergência, a população deve seguir os canais oficiais das
-                autoridades competentes.
+                A Alertaê pesquisa um canal redundante: a nuvem em VPS comunica-se
+                pela internet com o node na TV box (Docker, MQTT, API local, SQLite
+                e fila de SMS). Se a conexão convencional cair, o node local segue
+                o caminho e dispara SMS pelo modem 4G com SIM, ligado por USB —
+                SMS e dados móveis até as pessoas. Isso é pesquisa e desenvolvimento,
+                integrado aos protocolos oficiais — não é cobertura universal nem
+                substituto da defesa civil. Em emergência, a população deve seguir
+                os canais oficiais das autoridades competentes.
               </p>
             </details>
             <details class="faq__item">
