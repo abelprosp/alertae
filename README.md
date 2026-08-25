@@ -40,6 +40,8 @@ Evitar fotos de tragédias. Preferir:
 
 Quando houver fotos oficiais, substituir os JPEGs em `assets/images/` e remover qualquer marca de terceiros que tenha sido gerada apenas como referência visual.
 
-## Placeholders a preencher
+## Contato institucional
 
-E-mail, telefone, endereço, redes, domínio, editais, publicações e CNPJ/DPO.
+- E-mail: [alertaeinstitute@gmail.com](mailto:alertaeinstitute@gmail.com)
+- Telefone: [(51) 99550-1677](tel:+5551995501677)
+- Endereço: Lajeado-RS

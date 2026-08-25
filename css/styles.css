@@ -169,13 +169,6 @@ textarea {
   text-transform: uppercase;
 }
 
-.placeholder {
-  display: inline;
-  color: var(--color-text-muted);
-  font-style: italic;
-  font-size: 0.92em;
-}
-
 /* --------------------------------------------------------------------------
    Botões — hover, foco, carregamento, sucesso e erro
    -------------------------------------------------------------------------- */
@@ -872,16 +865,6 @@ textarea {
   color: #c5ccd3;
   margin-top: 1rem;
   max-width: 36ch;
-}
-
-.footer__social-title {
-  margin-top: 1.4rem;
-}
-
-.social {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
 }
 
 .footer__legal {

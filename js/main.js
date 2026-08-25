@@ -181,7 +181,7 @@
         setButtonState("error", "Tentar novamente");
         setStatus(
           "error",
-          "Não foi possível enviar agora. Tente novamente ou use [e-mail institucional]."
+          "Não foi possível enviar agora. Tente novamente ou use alertaeinstitute@gmail.com."
         );
         window.setTimeout(() => setButtonState("idle", idleLabel), 2200);
         return;
